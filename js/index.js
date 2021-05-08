@@ -4,6 +4,8 @@ const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search =  document.getElementById('search');
 
+getUser('lakshayalmadi');
+
 async function getUser(username){
     const response = await fetch(GITHUBAPI + username);
     const responseData= await response.json();
@@ -15,17 +17,20 @@ function createUserCard(user){
 
     const cardHTML =`
         <div class="card">
-            <div>
-                <img src="${user.avatar_url}" alt="${user.name}"/>
+            <div class="image-container">
+                <img class="profile-img" src="${user.avatar_url}" alt="${user.name}"/>
             </div>
-            <div>
-                <h2>${user.name}</h2>
+            <div class="user-info">
+                <h2><a href="${user.html_url}">${user.name}</a></h2>
                 <p>${user.bio}</p>
+                <p>${user.company}</p>
+                <p>${user.location}</p>
+                <p>${user.email}</p>    
 
-                <ul>
-                    <li>${user.followers}</li>
-                    <li>${user.following}</li>
-                    <li>${user.public_repos}</li>
+                <ul class="info">
+                    <li><strong>${user.followers}</strong></li>
+                    <li><strong>${user.following}</strong></li>
+                    <li><strong>${user.public_repos}</strong></li>
                 </ul>
             </div>
         </div>
