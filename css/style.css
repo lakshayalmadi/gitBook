@@ -58,10 +58,15 @@ input:focus{
 .user-info{
     color:#eee;
     margin-left: 2rem;
+    text-align: left;
 }
 
 .user-info h2{
     margin-top: 0;
+}
+a{
+    color:inherit;
+    text-decoration: none;
 }
 
 .user-info ul{

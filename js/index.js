@@ -25,7 +25,7 @@ function createUserCard(user){
                 <p>${user.bio}</p>
                 <p>${user.company}</p>
                 <p>${user.location}</p>
-                <p>${user.email}</p>    
+                <p>${user.blog}</p>    
 
                 <ul class="info">
                     <li><strong>${user.followers}</strong></li>
