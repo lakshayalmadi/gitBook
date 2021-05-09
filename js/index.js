@@ -11,6 +11,31 @@ async function getUser(username){
     const responseData= await response.json();
 
     createUserCard(responseData);
+    getRepos(username);
+}
+
+async function getRepos(username) {
+    const response = await fetch(GITHUBAPI + username + "/repos");
+    const responseData = await response.json();
+
+    addReposToCard(responseData);
+}
+
+function addReposToCard(repos) {
+    const reposEl = document.getElementById("repos");
+
+    repos
+        .sort((a, b) => b.stargazers_count - a.stargazers_count)
+        .slice(0, 10)
+        .forEach((repo) => {
+            const repoEl = document.createElement("a");
+            repoEl.classList.add("repo");
+
+            repoEl.href = repo.html_url;
+            repoEl.target = "_blank";
+            repoEl.innerText = repo.name;
+            reposEl.appendChild(repoEl);
+        });
 }
 
 function createUserCard(user){
@@ -32,6 +57,7 @@ function createUserCard(user){
                     <li><strong>${user.following}</strong></li>
                     <li><strong>${user.public_repos}</strong></li>
                 </ul>
+                <div id="repos"></div>
             </div>
         </div>
 
