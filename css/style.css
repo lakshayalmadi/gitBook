@@ -14,6 +14,59 @@ body{
     margin:0;
     align-items: center;
 }
+.switch {
+    position: fixed;
+    top:20px;
+    right: 20px;
+    width: 60px;
+    height: 34px;
+  }
+  
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0D1117;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+  
+input:checked + .slider {
+    background-color: #ccc;
+}
+  
+input:focus + .slider {
+  box-shadow: 0 0 1px #0D1117;
+} 
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}    
 
 input{
     background-color:#0D1117;
@@ -22,6 +75,19 @@ input{
     box-shadow: 0 5px  10px rgba(154, 160, 185, 0.05),
         0 15px 40px rgba(0,0,0,0.1);
     color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    width: 200px;
+}
+.input-light{
+    color:#24292E;
+    background-color:#ffffff;
+    border-radius: 10px;
+    border:none;
+    box-shadow: 0 5px  10px rgba(154, 160, 185, 0.05),
+        0 15px 40px rgba(0,0,0,0.1);
     font-family: inherit;
     font-size: 1rem;
     padding: 1rem;
@@ -45,6 +111,16 @@ input:focus{
     box-shadow: 0 5px  10px rgba(154, 160, 185, 0.05),
         0 15px 40px rgba(0,0,0,0.1);
     color:white;
+    max-width: 800px;
+}
+.card-light{
+    background-color: white;
+    display: flex;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 5px  10px rgba(154, 160, 185, 0.05),
+        0 15px 40px rgba(0,0,0,0.1);
+    color:#24292E;
     max-width: 800px;
 }
 
@@ -92,6 +168,18 @@ a{
     border-radius: 5px;
     display: inline-block;
     color:white;
+    font-size:0.7rem;
+    padding:0.25rem 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+}
+
+.repo-light{
+    background-color:#ffffff;
+    border-radius: 5px;
+    display: inline-block;
+    color:#24292E;
     font-size:0.7rem;
     padding:0.25rem 0.5rem;
     margin-right: 0.5rem;

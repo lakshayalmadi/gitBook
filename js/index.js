@@ -4,7 +4,6 @@ const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search =  document.getElementById('search');
 
-getUser('lakshayalmadi');
 
 async function getUser(username){
     const response = await fetch(GITHUBAPI + username);
@@ -15,6 +14,9 @@ async function getUser(username){
 }
 
 async function getRepos(username) {
+    //const repoResponse = await fetch(`https://api.github.com/users/${user}/repos?per_page=${this.repo_count}&sort=${this.repo_sort}`);
+       
+    
     const response = await fetch(GITHUBAPI + username + "/repos");
     const responseData = await response.json();
 
@@ -25,12 +27,11 @@ function addReposToCard(repos) {
     const reposEl = document.getElementById("repos");
 
     repos
-        .sort((a, b) => b.stargazers_count - a.stargazers_count)
+        .sort((a, b) => b.created_at- a.created_at)
         .slice(0, 10)
         .forEach((repo) => {
             const repoEl = document.createElement("a");
             repoEl.classList.add("repo");
-
             repoEl.href = repo.html_url;
             repoEl.target = "_blank";
             repoEl.innerText = repo.name;
@@ -53,9 +54,9 @@ function createUserCard(user){
                 <p>${user.blog}</p>    
 
                 <ul class="info">
-                    <li><strong>${user.followers}</strong></li>
-                    <li><strong>${user.following}</strong></li>
-                    <li><strong>${user.public_repos}</strong></li>
+                    <li><strong>Followers: ${user.followers}</strong></li>
+                    <li><strong>Following: ${user.following}</strong></li>
+                    <li><strong>Repos: ${user.public_repos}</strong></li>
                 </ul>
                 <div id="repos"></div>
             </div>
