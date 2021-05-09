@@ -39,7 +39,6 @@ body{
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 34px;
-
 }
   
 .slider:before {
@@ -68,7 +67,7 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }    
 
-input{
+.input{
     background-color:#0D1117;
     border-radius: 10px;
     border:none;
@@ -81,18 +80,14 @@ input{
     margin-bottom: 2rem;
     width: 200px;
 }
-.input-light{
+.light-mode{
     color:#24292E;
-    background-color:#ffffff;
-    border-radius: 10px;
-    border:none;
-    box-shadow: 0 5px  10px rgba(154, 160, 185, 0.05),
-        0 15px 40px rgba(0,0,0,0.1);
-    font-family: inherit;
-    font-size: 1rem;
-    padding: 1rem;
-    margin-bottom: 2rem;
-    width: 200px;
+    background-color:#C4C9D4;
+};
+
+.light-mode-items{
+    color:#24292E!important;
+    background-color: white!important;
 }
 
 input::placeholder{
@@ -113,17 +108,6 @@ input:focus{
     color:white;
     max-width: 800px;
 }
-.card-light{
-    background-color: white;
-    display: flex;
-    padding: 3rem;
-    border-radius: 20px;
-    box-shadow: 0 5px  10px rgba(154, 160, 185, 0.05),
-        0 15px 40px rgba(0,0,0,0.1);
-    color:#24292E;
-    max-width: 800px;
-}
-
 .profile-img{
     height: 250px;
     width: 250px;
@@ -168,18 +152,6 @@ a{
     border-radius: 5px;
     display: inline-block;
     color:white;
-    font-size:0.7rem;
-    padding:0.25rem 0.5rem;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-    text-decoration: none;
-}
-
-.repo-light{
-    background-color:#ffffff;
-    border-radius: 5px;
-    display: inline-block;
-    color:#24292E;
     font-size:0.7rem;
     padding:0.25rem 0.5rem;
     margin-right: 0.5rem;
