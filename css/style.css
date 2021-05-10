@@ -82,7 +82,7 @@ input:checked + .slider:before {
 }
 .light-mode{
     color:#24292E;
-    background-color:#C4C9D4;
+    background-color:white;
 };
 
 .light-mode-items{
@@ -91,7 +91,7 @@ input:checked + .slider:before {
 }
 
 input::placeholder{
-    color: #bbb;
+    color: rgb(131, 128, 128);
 }
 
 input:focus{
